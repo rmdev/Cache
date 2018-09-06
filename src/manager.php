@@ -310,5 +310,23 @@ class ezcCacheManager
         }
         return self::$caches[$id];
     }
+
+    /**
+     * Unsets the class internal cache variable for the given ID
+     *
+     * @param string $id he ID of the cache to unset
+     * @return void
+     */
+    public static function unsetCache( $id )
+    {
+        if ( isset( self::$caches[$id] ) )
+        {
+            unset(self::$caches[$id]);
+        }
+        if ( isset( self::$configurations[$id]))
+        {
+            unset(self::$configurations[$id]);
+        }
+    }
 }
 ?>
